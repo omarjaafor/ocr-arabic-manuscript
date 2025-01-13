@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  ocr_training:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: jaaforom/arabic-ocr-manuscript:latest
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./model:/app/model
+      - ./config.yaml:/app/config.yaml
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

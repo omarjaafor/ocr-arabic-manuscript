@@ -1,0 +1,51 @@
+# OCR Domain Adaptation Configuration
+
+# Data paths
+data:
+  train_images: "data/train/imgs"
+  train_texts: "data/train/texts"
+  val_images: "data/val/imgs"
+  val_texts: "data/val/texts"
+  # Image preprocessing settings
+  grayscale: true  # Convert images to grayscale
+  enhance_contrast: false  # Apply contrast enhancement
+  target_size: [672,896]  # Target image size [width, height], null to keep original size
+  
+# Model configurations
+model:
+  # Available models (HuggingFace IDs)
+  available_models:
+    - "microsoft/trocr-large-handwritten"  # General purpose OCR
+    - "microsoft/trocr-base-arabic"        # Arabic specialized
+    - "MBZUAI/arabic-ocr"                  # Arabic specialized
+    - "google/nougat-base"                 # Document OCR
+  
+  # Selected model from available_models
+  selected_model: "MohamedRashad/arabic-large-nougat"
+  
+  # Model saving paths
+  save_path:
+    current: "model/current"
+    best: "model/best"
+
+# Training configuration
+training:
+  # Domain adaptation mode
+  # Options: low, intermediate, best_practice, high
+  adaptation_mode: "low"
+  
+  # Training parameters
+  batch_size: 8
+  max_epochs: 100
+  early_stopping_patience: 2  # K iterations without improvement
+  
+  # Learning rate configuration
+  learning_rate:
+    initial: 2e-5
+    scheduler: "cosine"  # Options: cosine, linear, step
+    warmup_steps: 10
+    
+# Logging configuration
+logging:
+  level: "INFO"
+  save_path: "logs/training.log"

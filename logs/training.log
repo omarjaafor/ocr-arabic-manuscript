@@ -1,0 +1,13 @@
+2025-01-06 12:27:32,443 - INFO - Loading model: microsoft/trocr-base-arabic
+2025-01-06 12:30:07,071 - INFO - Loading model: MohamedRashad/arabic-large-nougat
+2025-01-06 12:58:20,415 - INFO - Adaptation mode: low
+2025-01-06 12:58:20,415 - INFO - Training 0 out of 0 layers
+2025-01-06 13:02:07,636 - INFO - Loading model: MohamedRashad/arabic-large-nougat
+2025-01-06 13:02:14,951 - INFO - Adaptation mode: low
+2025-01-06 13:02:14,955 - INFO - Training 0 out of 0 layers
+2025-01-06 13:02:45,378 - INFO - Loading model: MohamedRashad/arabic-large-nougat
+2025-01-06 13:02:52,043 - INFO - Adaptation mode: low
+2025-01-06 13:02:52,044 - INFO - Training 0 out of 0 layers
+2025-01-06 13:03:17,935 - INFO - Loading model: MohamedRashad/arabic-small-nougat
+2025-01-06 13:20:49,023 - INFO - Adaptation mode: low
+2025-01-06 13:20:49,024 - INFO - Training 0 out of 0 layers
